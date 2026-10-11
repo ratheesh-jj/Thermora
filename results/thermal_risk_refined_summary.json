@@ -1,0 +1,61 @@
+{
+  "total_predictions": 2093,
+  "risk_counts": {
+    "SAFE": 496,
+    "CAUTION": 787,
+    "HIGH": 494,
+    "CRITICAL": 316,
+    "UNKNOWN": 0
+  },
+  "temperature": {
+    "mean_estimated_core_temp_c": 37.895234311514564,
+    "mean_predicted_future_core_temp_c": 38.04542011180125,
+    "mean_predicted_rise_c": 0.15018580028666986,
+    "maximum_predicted_future_core_temp_c": 39.379013,
+    "maximum_predicted_rise_c": 0.6975130000000007
+  },
+  "environment": {
+    "mean_ambient_temp_c": 34.90041567128524,
+    "mean_humidity_pct": 35.6775712693104,
+    "mean_wind_mps": 0.34146341463414637,
+    "mean_solar_radiation_w_m2": 104.07521194131071
+  },
+  "risk_score": {
+    "mean_physiological": 2.7840420449116103,
+    "mean_environmental": 3.961299569995222,
+    "mean_activity_work": 1.4175824175824177,
+    "mean_total": 8.16292403248925,
+    "maximum_total": 19
+  },
+  "prototype_thresholds": {
+    "core_temp": {
+      "caution": 38.0,
+      "high": 38.4,
+      "critical": 38.8
+    },
+    "temperature_rise": {
+      "caution": 0.2,
+      "high": 0.3,
+      "critical": 0.4
+    },
+    "ambient_temp": {
+      "elevated": 32.0,
+      "high": 35.0,
+      "very_high": 38.0
+    },
+    "humidity": {
+      "elevated": 60.0,
+      "high": 75.0,
+      "very_high": 85.0
+    },
+    "wind": {
+      "low": 1.0,
+      "very_low": 0.5
+    },
+    "solar": {
+      "elevated": 300.0,
+      "high": 600.0,
+      "very_high": 800.0
+    }
+  }
+}

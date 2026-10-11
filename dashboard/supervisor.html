@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THERMORA — Supervisor Dashboard</title>
+    <meta name="description" content="THERMORA Supervisor Dashboard — workforce-wide safety monitoring overview.">
+    <link rel="stylesheet" href="style.css?v=7">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body class="supervisor-body">
+
+    <!-- ===== TOP BAR ===== -->
+    <header class="topbar" id="topbar">
+        <div class="topbar__brand">
+            <div class="topbar__logo">
+                <span class="topbar__logo-mark">T</span>
+                <div>
+                    <h1 class="topbar__title">THERMORA <span class="sup-badge">SUPERVISOR</span></h1>
+                    <span class="topbar__subtitle">Workforce Safety Overview</span>
+                </div>
+            </div>
+        </div>
+        <div class="topbar__status">
+            <div class="status-chip status-chip--time">
+                <span class="status-chip__label">LIVE</span>
+                <span class="status-chip__value" id="sup-clock">--:--:--</span>
+            </div>
+            <a href="index.html" class="sup-nav-btn">📊 Individual Dashboard</a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" onclick="toggleTheme()">
+                <span class="theme-toggle__icon" id="theme-icon">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="sup-main">
+
+        <!-- SUMMARY STATS -->
+        <section class="sup-summary">
+            <div class="sup-stat sup-stat--total">
+                <span class="sup-stat__value" id="sup-total">0</span>
+                <span class="sup-stat__label">Active Workers</span>
+                <span class="sup-stat__icon">👷</span>
+            </div>
+            <div class="sup-stat sup-stat--normal">
+                <span class="sup-stat__value" id="sup-normal">0</span>
+                <span class="sup-stat__label">Normal</span>
+                <span class="sup-stat__icon">🟢</span>
+            </div>
+            <div class="sup-stat sup-stat--attention">
+                <span class="sup-stat__value" id="sup-attention">0</span>
+                <span class="sup-stat__label">Attention</span>
+                <span class="sup-stat__icon">🟡</span>
+            </div>
+            <div class="sup-stat sup-stat--critical">
+                <span class="sup-stat__value" id="sup-critical">0</span>
+                <span class="sup-stat__label">Critical</span>
+                <span class="sup-stat__icon">🔴</span>
+            </div>
+        </section>
+
+        <!-- MAP + ALERTS ROW -->
+        <section class="sup-map-row">
+            <div class="card sup-map-card">
+                <div class="card__header">
+                    <span class="card__icon">🗺️</span>
+                    <h2 class="card__title">Worker Locations</h2>
+                </div>
+                <div class="sup-map" id="sup-map"></div>
+            </div>
+            <div class="card sup-alerts-card">
+                <div class="card__header">
+                    <span class="card__icon">🚨</span>
+                    <h2 class="card__title">Active Alerts</h2>
+                </div>
+                <div class="sup-alerts-list" id="sup-alerts-list">
+                    <div class="sup-alert-empty">No active alerts — all workers safe</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKER GRID -->
+        <section class="sup-section">
+            <div class="card__header" style="padding: 0 0 12px; border-bottom: none;">
+                <span class="card__icon">👥</span>
+                <h2 class="card__title">All Workers</h2>
+            </div>
+            <div class="sup-workers-grid" id="sup-workers-grid">
+                <div class="sup-alert-empty">Loading workers...</div>
+            </div>
+        </section>
+
+        <!-- ===== SOS & EMERGENCY CALL LOG ===== -->
+        <section class="sup-section sos-section" id="sos-section">
+            <div class="sos-section__header">
+                <div class="card__header" style="padding: 0; border-bottom: none;">
+                    <span class="card__icon">🆘</span>
+                    <h2 class="card__title">SOS &amp; Emergency Call Log</h2>
+                </div>
+                <!-- Simulate SOS Button Removed -->
+            </div>
+
+            <!-- SOS Summary Counters -->
+            <div class="sos-summary" id="sos-summary">
+                <div class="sos-summary__item sos-summary__item--events">
+                    <span class="sos-summary__value" id="sos-count-events">00</span>
+                    <span class="sos-summary__label">SOS Events Today</span>
+                </div>
+                <div class="sos-summary__item sos-summary__item--calls">
+                    <span class="sos-summary__value" id="sos-count-calls">00</span>
+                    <span class="sos-summary__label">Calls Made</span>
+                </div>
+                <div class="sos-summary__item sos-summary__item--ack">
+                    <span class="sos-summary__value" id="sos-count-ack">00</span>
+                    <span class="sos-summary__label">Acknowledged</span>
+                </div>
+                <div class="sos-summary__item sos-summary__item--pending">
+                    <span class="sos-summary__value" id="sos-count-pending">00</span>
+                    <span class="sos-summary__label">Pending</span>
+                </div>
+            </div>
+
+            <!-- Search & Filters -->
+            <div class="sos-toolbar">
+                <div class="sos-search-wrap">
+                    <span class="sos-search-icon">🔍</span>
+                    <input type="text" class="sos-search" id="sos-search" placeholder="Search by Event ID, Worker ID, or Name…">
+                </div>
+                <div class="sos-filters" id="sos-filters">
+                    <button class="sos-filter-btn sos-filter-btn--active" data-filter="all">All</button>
+                    <button class="sos-filter-btn" data-filter="today">Today</button>
+                    <button class="sos-filter-btn" data-filter="Fall Detected">Fall</button>
+                    <button class="sos-filter-btn" data-filter="Heat Stress">Heat Stress</button>
+                    <button class="sos-filter-btn" data-filter="Vital Anomaly">Vital Anomaly</button>
+                    <button class="sos-filter-btn" data-filter="Manual SOS">Manual SOS</button>
+                </div>
+            </div>
+
+            <!-- SOS Table -->
+            <div class="sos-table-wrap">
+                <table class="sos-table" id="sos-table">
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Worker ID</th>
+                            <th>Worker Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Emergency Type</th>
+                            <th>Trigger</th>
+                            <th>Contacted</th>
+                            <th>Call Status</th>
+                            <th>Response Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sos-table-body">
+                        <tr><td colspan="11" class="sos-table__empty">No SOS events recorded</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== SOS DETAIL MODAL ===== -->
+    <div class="sos-modal-overlay" id="sos-modal-overlay" style="display:none;">
+        <div class="sos-modal" id="sos-modal">
+            <div class="sos-modal__header">
+                <h3 class="sos-modal__title">🆘 SOS Event Details</h3>
+                <button class="sos-modal__close" id="sos-modal-close">&times;</button>
+            </div>
+            <div class="sos-modal__body" id="sos-modal-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOS NOTIFICATION TOAST ===== -->
+    <div class="sos-toast" id="sos-toast" style="display:none;">
+        <span class="sos-toast__icon">🚨</span>
+        <div class="sos-toast__content">
+            <strong class="sos-toast__title" id="sos-toast-title">SOS ALERT REGISTERED</strong>
+            <span class="sos-toast__msg" id="sos-toast-msg">--</span>
+        </div>
+    </div>
+
+    <script src="sos-data.js?v=3"></script>
+    <script src="supervisor.js?v=8"></script>
+</body>
+</html>

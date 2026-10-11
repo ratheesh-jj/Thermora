@@ -1,0 +1,74 @@
+{
+    "0": {
+        "code": "A",
+        "name": "Walking"
+    },
+    "1": {
+        "code": "B",
+        "name": "Jogging"
+    },
+    "2": {
+        "code": "C",
+        "name": "Stairs"
+    },
+    "3": {
+        "code": "D",
+        "name": "Sitting"
+    },
+    "4": {
+        "code": "E",
+        "name": "Standing"
+    },
+    "5": {
+        "code": "F",
+        "name": "Typing"
+    },
+    "6": {
+        "code": "G",
+        "name": "Brushing Teeth"
+    },
+    "7": {
+        "code": "H",
+        "name": "Eating Soup"
+    },
+    "8": {
+        "code": "I",
+        "name": "Eating Chips"
+    },
+    "9": {
+        "code": "J",
+        "name": "Eating Pasta"
+    },
+    "10": {
+        "code": "K",
+        "name": "Drinking"
+    },
+    "11": {
+        "code": "L",
+        "name": "Eating Sandwich"
+    },
+    "12": {
+        "code": "M",
+        "name": "Kicking"
+    },
+    "13": {
+        "code": "O",
+        "name": "Catching"
+    },
+    "14": {
+        "code": "P",
+        "name": "Dribbling Basketball"
+    },
+    "15": {
+        "code": "Q",
+        "name": "Writing"
+    },
+    "16": {
+        "code": "R",
+        "name": "Folding Clothes"
+    },
+    "17": {
+        "code": "S",
+        "name": "Cleaning"
+    }
+}

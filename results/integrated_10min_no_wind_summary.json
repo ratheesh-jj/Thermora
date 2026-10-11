@@ -1,0 +1,54 @@
+{
+  "model_type": "Two-stage deployable thermal prediction pipeline",
+  "wind_required": false,
+  "target_horizon_minutes": 10.0,
+  "target_tolerance_minutes": 0.75,
+  "target_rows": 6259,
+  "stage_1": {
+    "model": "No-wind core temperature estimator",
+    "MAE_C": 0.24611363092110755,
+    "RMSE_C": 0.3190907696256504,
+    "R2": 0.6498064672994373
+  },
+  "stage_2": {
+    "best_model": "HistGradientBoosting",
+    "MAE_C": 0.2317375951777637,
+    "RMSE_C": 0.30488813670157394,
+    "R2": 0.6645273177893627,
+    "persistence_MAE_C": 0.29197840630445554,
+    "persistence_RMSE_C": 0.3555079016949656,
+    "persistence_R2": 0.5438847165624295,
+    "improvement_over_persistence_percent": 20.631940522299015
+  },
+  "participants": {
+    "total": 40,
+    "train": 32,
+    "test": 8,
+    "test_participants": [
+      5,
+      13,
+      16,
+      17,
+      30,
+      37,
+      38,
+      48
+    ]
+  },
+  "features": [
+    "estimated_core_temp_c",
+    "heart_rate_bpm",
+    "rr_interval_ms",
+    "sdrr_ms",
+    "rmssd_ms",
+    "skin_temp_mean_c",
+    "ambient_temp_c",
+    "humidity_pct",
+    "age_years",
+    "body_mass_kg",
+    "height_cm",
+    "sex",
+    "activity_code",
+    "work_rest"
+  ]
+}

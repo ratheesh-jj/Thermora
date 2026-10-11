@@ -1,0 +1,18 @@
+{
+  "model": "RandomForestRegressor",
+  "n_estimators": 500,
+  "min_samples_leaf": 3,
+  "max_features": "sqrt",
+  "random_state": 42,
+  "input_features": 156,
+  "training_rows": 1439,
+  "training_participants": 39,
+  "validated_mae": 1.6728,
+  "validated_mae_std": 0.4865,
+  "validated_rmse": 2.0253,
+  "validated_r2": 0.0528,
+  "target": "continuous fatigue score 0-10",
+  "sensor": "BMI270 IMU4-equivalent",
+  "window_seconds": 180,
+  "window_stride_seconds": 30
+}

@@ -1,0 +1,25 @@
+{
+  "module": "THERMORA hybrid vital anomaly detector",
+  "total_windows": 845,
+  "vital_anomalies": 2,
+  "measurement_unreliable": 0,
+  "hr_deviations": 36,
+  "spo2_deviations": 33,
+  "ml_support": 67,
+  "normal": 707,
+  "mean_hr_bpm": 89.1915942061445,
+  "mean_spo2_percent": 96.73075785161585,
+  "mean_ml_anomaly_score": 0.3362782852249274,
+  "configuration": {
+    "spo2_low_threshold": 90.0,
+    "hr_high_threshold": 120.0,
+    "hr_low_threshold": 50.0,
+    "hr_relative_change": 0.25,
+    "spo2_drop_threshold": 3.0,
+    "ppg_std_min": 0.005,
+    "ppg_range_min": 0.02,
+    "ml_support_threshold": 0.875,
+    "persistence_windows": 2
+  },
+  "warning": "This is an engineering prototype and does not provide clinical diagnosis or clinical validation."
+}

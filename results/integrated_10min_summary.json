@@ -1,0 +1,26 @@
+{
+  "dataset_rows": 15548,
+  "participants": 40,
+  "train_participants": 32,
+  "test_participants": 8,
+  "test_participant_ids": [
+    "5",
+    "13",
+    "16",
+    "17",
+    "30",
+    "37",
+    "38",
+    "48"
+  ],
+  "horizon_minutes": 10.0,
+  "target_tolerance_minutes": 0.75,
+  "mean_actual_target_offset_minutes": 10.0,
+  "core_estimator_test_mae_c": 0.24225718519632175,
+  "core_estimator_test_rmse_c": 0.3207258545394139,
+  "core_estimator_test_r2": 0.6556884680427983,
+  "persistence_mae_c": 0.2825863161434848,
+  "best_model": "XGBoost",
+  "best_future_core_mae_c": 0.24060221052830477,
+  "improvement_over_persistence_pct": 14.857090813223364
+}

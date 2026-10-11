@@ -1,0 +1,2 @@
+previous_benchmark_MAE,best_feature_set,best_model,best_MAE,best_RMSE,best_R2,raw_best_MAE,raw_plus_baseline_MAE,baseline_relative_MAE,raw_to_baseline_improvement_pct,raw_to_relative_improvement_pct,benchmark_improvement_pct
+0.900452,RAW_PLUS_BASELINE,RandomForest,1.9676562733156457,2.278444174846461,-0.06642415983072181,2.0054676591835143,1.9676562733156457,1.9685444076630203,1.885414890373387,1.8411292424195254,-118.5187298507467

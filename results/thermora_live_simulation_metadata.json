@@ -1,0 +1,26 @@
+{
+  "simulation_type": "offline_recorded_sensor_simulation",
+  "outputs_independent": true,
+  "thermal_rows": 1342,
+  "fatigue_windows": 9,
+  "fall_windows": 4214,
+  "fatigue_window_samples": 360,
+  "fatigue_window_seconds": 180.0,
+  "fatigue_stride_samples": 60,
+  "fatigue_stride_seconds": 30.0,
+  "fall_window_samples": 20,
+  "fatigue_sensor_source": "C:\\Users\\OMEN\\Desktop\\Projects\\SIH26\\fatigue_prediction\\fatigue_personalization_results\\extracted\\MxD_Data_User_Study\\MxD_Data_User_Study\\composite\\P001C001S002\\Final_Rest_P001C001S002.csv",
+  "fatigue_sensor_channels": [
+    "IMU_4_ax_g_",
+    "IMU_4_ay_g_",
+    "IMU_4_az_g_",
+    "IMU_4_gx_dps_",
+    "IMU_4_gy_dps_",
+    "IMU_4_gz_dps_"
+  ],
+  "fatigue_feature_count": 156,
+  "fall_feature_count": 148,
+  "thermal_model": "thermora_integrated_10min_no_wind_model.pkl",
+  "fatigue_model": "thermora_fatigue_rf.pkl",
+  "fall_model": "thermora_event_model_v2.pkl"
+}

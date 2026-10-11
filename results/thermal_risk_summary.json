@@ -1,0 +1,29 @@
+{
+  "total_predictions": 2093,
+  "risk_counts": {
+    "SAFE": 670,
+    "CAUTION": 627,
+    "HIGH": 480,
+    "CRITICAL": 316,
+    "UNKNOWN": 0
+  },
+  "temperature_statistics": {
+    "mean_estimated_current_core_temp_c": 37.895234311514564,
+    "mean_predicted_future_core_temp_c": 38.04542011180125,
+    "mean_predicted_temp_rise_c": 0.15018580028666986,
+    "max_predicted_future_core_temp_c": 39.379013,
+    "max_predicted_temp_rise_c": 0.6975130000000007
+  },
+  "prototype_thresholds": {
+    "temperature": {
+      "safe_max": 38.0,
+      "caution_max": 38.4,
+      "high_max": 38.8
+    },
+    "rise": {
+      "caution": 0.2,
+      "high": 0.3,
+      "critical": 0.4
+    }
+  }
+}

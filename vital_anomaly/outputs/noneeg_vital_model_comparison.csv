@@ -1,0 +1,7 @@
+feature_group,model,accuracy,macro_f1
+HR + SpO2,RandomForest,0.40427866154690073,0.38034595862537335
+HR + SpO2,HistGradientBoosting,0.47613823368074604,0.3961552706700731
+HR + SpO2 + Temperature,RandomForest,0.47723532638507954,0.424397699487288
+HR + SpO2 + Temperature,HistGradientBoosting,0.5139879319802523,0.4241750028100738
+All wearable signals,RandomForest,0.6028524410312671,0.5027043559478485
+All wearable signals,HistGradientBoosting,0.6494788809654416,0.5674100267297704

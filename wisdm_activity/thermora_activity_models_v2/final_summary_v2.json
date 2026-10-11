@@ -1,0 +1,12 @@
+{
+    "best_model": "LightGBM",
+    "accuracy": 0.6921685189971569,
+    "macro_f1": 0.7096866331891517,
+    "num_windows": 35987,
+    "num_features": 112,
+    "num_participants": 51,
+    "num_classes": 18,
+    "window_seconds": 10,
+    "overlap": 0.5,
+    "sample_rate": 20
+}

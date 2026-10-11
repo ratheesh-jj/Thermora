@@ -1,0 +1,88 @@
+{
+  "source": "BITS-2 full_dataset.zip",
+  "total_csv_files": 984,
+  "adl_files": 656,
+  "fall_files": 328,
+  "participants": 41,
+  "input_channels": [
+    "acc_x",
+    "acc_y",
+    "acc_z",
+    "gyro_x",
+    "gyro_y",
+    "gyro_z"
+  ],
+  "sampling_rate_hz_assumed": 20,
+  "window_seconds": 1.0,
+  "stride_seconds": 0.5,
+  "window_shape": [
+    20,
+    6
+  ],
+  "total_windows": 62223,
+  "class_windows": {
+    "non_fall": 40679,
+    "fall": 21544
+  },
+  "split_users": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "validation": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "test": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ]
+  },
+  "split_windows": {
+    "train": 47247,
+    "validation": 7545,
+    "test": 7431
+  },
+  "notes": [
+    "Timestamp column is not used as a model feature because the distributed CSV timestamps are rounded/scientific-notation values in the extracted files.",
+    "acc and gyro streams are taken from each recording and truncated to their common sample count; both are documented by the dataset as 20 Hz motion sensors.",
+    "The 'a' column is not used; the dataset paper describes it as the number-of-axes field.",
+    "Labels are recording-level (ADL=0, fall=1). Therefore windows cut from a fall recording are currently labeled 1; this is suitable for a first benchmark but is not an exact impact-time annotation.",
+    "Participant-held-out split prevents the same participant from appearing in train and test."
+  ]
+}

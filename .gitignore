@@ -1,0 +1,113 @@
+# ==========================================
+# THERMORA Git Ignore Configuration
+# ==========================================
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Node.js & Web Frontend
+node_modules/
+*/node_modules/
+web/node_modules/
+web/dist/
+web/dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Operating System & IDE Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Runtime Sensor Logs & Session Dumps
+results/live_sensor_data/*
+!results/live_sensor_data/.gitkeep
+*.log
+
+# Large Datasets & Compressed Archives (Avoid GitHub bloating)
+*.zip
+*.tar
+*.gz
+*.bz2
+*.7z
+*.rar
+wisdm_activity/raw/
+vital_anomaly/bidmc/
+vital_anomaly/bidmc_csv/
+vital_anomaly/wearable_stress/
+vital_anomaly/noneeg/
+fatigue_prediction/fatigue_personalization_results/extracted/
+
+# Large Intermediate Feature CSVs & Heavy Datasets (>25MB)
+fatigue_prediction/fatigue_personalization_results/imu4_fatigue_features.csv
+fatigue_prediction/fatigue_temporal_v1/temporal_sequences.csv
+wisdm_activity/thermora_activity_models/activity_features.csv
+wisdm_activity/thermora_activity_models_v2/activity_features_v2.csv
+Fall_Prediction/thermora_full_event_dataset.npz
+Fall_Prediction/thermora_full_event_metadata.csv
+Fall_Prediction/thermora_raw_event_windows*.npz
+Fall_Prediction/bits2_imu_windows.npz
+Fall_Prediction/window_metadata.csv
+
+# Heavy Research Models & Files exceeding GitHub 100MB Limit
+Fall_Prediction/thermora_event_model.pkl
+wisdm_activity/thermora_activity_models_v2/thermora_activity_rf_v2.pkl
+wisdm_activity/thermora_activity_models_v2/sensor_comparison/
+wisdm_activity/thermora_activity_models/thermora_activity_model.pkl
+
+# Environment & Secrets (Safeguard)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert

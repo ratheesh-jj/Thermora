@@ -1,0 +1,18 @@
+{
+  "module": "THERMORA hybrid vital anomaly detector",
+  "test": "modality_aware_persistence_stress_test",
+  "normal_windows": 755,
+  "total_single_window_samples": 5285,
+  "persistence_sequences": 120,
+  "persistence_precision": 1.0,
+  "persistence_recall": 0.4166666666666667,
+  "persistence_f1": 0.5882352941176471,
+  "persistence_false_positive_rate": 0.0,
+  "logic": {
+    "combined_hr_spo2": "immediate anomaly",
+    "hr_only": "2 consecutive windows",
+    "spo2_only": "2 consecutive windows",
+    "ppg_only": "not a vital anomaly"
+  },
+  "warning": "Synthetic abnormalities are engineering stress tests, not clinical validation."
+}

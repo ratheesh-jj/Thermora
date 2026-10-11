@@ -1,0 +1,30 @@
+{
+  "dataset": "BIDMC PPG and Respiration Dataset v1.0.0",
+  "test_type": "synthetic_anomaly_stress_test",
+  "random_seed": 42,
+  "normal_windows": 500,
+  "copies_per_anomaly": 2,
+  "synthetic_anomaly_types": [
+    "spo2_drop",
+    "high_hr",
+    "low_hr",
+    "combined_hr_spo2",
+    "ppg_amplitude_disturbance",
+    "ppg_noise_disturbance"
+  ],
+  "total_test_rows": 6500,
+  "normal_rows": 500,
+  "abnormal_rows": 6000,
+  "selected_threshold": 0.1,
+  "best_precision": 0.9435063910367681,
+  "best_recall": 0.9965,
+  "best_f1": 0.9692794034206047,
+  "best_false_positive_rate": 0.716,
+  "best_anomaly_rate": 0.9749230769230769,
+  "best_low_fpr_threshold": 1.0,
+  "best_low_fpr_precision": 0.0,
+  "best_low_fpr_recall": 0.0,
+  "best_low_fpr_f1": 0.0,
+  "best_low_fpr_false_positive_rate": 0.0,
+  "warning": "Synthetic anomalies are controlled engineering stress tests and are NOT clinical ground truth or clinical validation."
+}

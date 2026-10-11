@@ -1,0 +1,30 @@
+# ==========================================
+# THERMORA - Core Dependencies
+# ==========================================
+
+# Web API & Streaming
+fastapi>=0.110.0
+uvicorn>=0.28.0
+websockets>=12.0
+flask>=3.0.0
+flask-cors>=4.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Machine Learning & Scientific Computing
+numpy>=1.26.0
+pandas>=2.2.0
+scipy>=1.12.0
+scikit-learn>=1.4.0
+joblib>=1.3.0
+lightgbm>=4.3.0
+xgboost>=2.0.0
+torch>=2.2.0
+
+# Biosignal & Physiological Processing
+wfdb>=4.1.2
+
+# Visualization & Reporting
+matplotlib>=3.8.0
+seaborn>=0.13.0
+openpyxl>=3.1.0

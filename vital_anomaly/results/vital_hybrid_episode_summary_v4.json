@@ -1,0 +1,43 @@
+{
+  "module": "THERMORA hybrid vital anomaly detector",
+  "version": "V4 episode-based prototype",
+  "input_windows": 845,
+  "recordings": 53,
+  "confirmed_anomaly_windows": 60,
+  "vital_anomaly_episodes": 6,
+  "hr_abnormal_windows": 38,
+  "spo2_abnormal_windows": 34,
+  "poor_ppg_windows": 0,
+  "ml_support_windows": 77,
+  "status_distribution": {
+    "NORMAL": 706,
+    "ML_ANOMALY_SUPPORT": 67,
+    "VITAL_ANOMALY": 60,
+    "HR_DEVIATION": 8,
+    "SPO2_DEVIATION": 4
+  },
+  "episode_type_distribution": {
+    "HR": 4,
+    "SPO2": 2
+  },
+  "mean_episode_duration_seconds": 300.0,
+  "median_episode_duration_seconds": 420.0,
+  "thresholds": {
+    "spo2_low": 90.0,
+    "hr_high": 120.0,
+    "hr_low": 50.0,
+    "hr_relative_change": 0.25,
+    "spo2_baseline_drop": 3.0,
+    "persistence_windows": 2,
+    "ml_support": 0.875
+  },
+  "logic": {
+    "combined_hr_spo2": "immediate confirmation",
+    "hr_only": "2 consecutive windows",
+    "spo2_only": "2 consecutive windows",
+    "poor_ppg": "measurement unreliable",
+    "ml_only": "supporting evidence only",
+    "episode_grouping": "continuous confirmed abnormal windows grouped into one episode"
+  },
+  "clinical_warning": "Prototype only. Not clinically validated and not intended for diagnosis or emergency medical decisions."
+}

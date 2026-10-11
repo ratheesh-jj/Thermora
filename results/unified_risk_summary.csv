@@ -1,0 +1,6 @@
+risk_level,rows,percentage
+SAFE,962,71.68
+CAUTION,253,18.85
+HIGH,84,6.26
+CRITICAL,43,3.2
+EMERGENCY,0,0.0

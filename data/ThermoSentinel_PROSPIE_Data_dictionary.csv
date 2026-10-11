@@ -1,0 +1,20 @@
+Column,Meaning,Role
+participant_id,Participant identifier,Required for participant-level train/test split and personalization
+condition_id,Experimental heat condition,Environmental/condition context
+time_min,Minutes elapsed from trial start,Temporal feature
+activity_code,Original experimental event code,Sequence context
+work_rest,Work/rest state,Workload feature
+humidity_pct,Relative humidity,Environment sensor
+ambient_temp_c,Ambient temperature,Environment sensor
+wind_mps,Wind speed,Environment sensor
+solar_present,Whether solar radiation was present,Environment feature
+solar_radiation_w_m2,Measured radiant/solar load,Environment feature
+heart_rate_bpm,Heart rate,Worker wearable
+rr_interval_ms,Mean RR interval,HRV feature
+sdrr_ms,SDRR,HRV feature
+rmssd_ms,RMSSD,HRV feature
+insulated_skin_temp_c,Insulated neck skin temperature,Worker wearable candidate
+microclimate_temp_c,Temperature outside the insulation layer,Reference feature
+skin_temp_mean_c,Mean of available 11 skin-temperature sites,Reference feature; not directly required on prototype
+core_temp_c,Rectal/core temperature,Primary ground-truth target
+delta_core_temp_c,Change in core temperature from trial start,Secondary target/feature

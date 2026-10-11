@@ -1,0 +1,11 @@
+Terminal 1 (Flask API Backend)
+
+powershell
+cd api
+pip install -r requirements.txt
+python app.py
+Terminal 2 (React Frontend)
+
+powershell
+cd web
+npm run dev

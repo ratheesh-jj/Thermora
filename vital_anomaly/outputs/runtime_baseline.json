@@ -1,0 +1,10 @@
+{
+    "hr_median": 91.0,
+    "hr_mad": 0.1,
+    "spo2_median": 97.0,
+    "spo2_mad": 0.1,
+    "hrv_median": null,
+    "hrv_mad": null,
+    "temperature_median": null,
+    "temperature_mad": null
+}

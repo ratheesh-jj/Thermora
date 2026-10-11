@@ -1,0 +1,18 @@
+{
+  "dataset": "BIDMC",
+  "train_recordings": 42,
+  "test_recordings": 11,
+  "total_windows": 845,
+  "model": "PCADetector",
+  "features": 46,
+  "proxy_evaluation": {
+    "proxy_recall": 1.0,
+    "proxy_precision": 0.05,
+    "false_positive_rate": 0.10857142857142857
+  },
+  "synthetic_evaluation": {
+    "overall_recall": 0.6666666666666666
+  },
+  "episodes": 0,
+  "disclaimer": "The BIDMC dataset does not provide ground-truth labels for clinical vital-sign anomalies. Therefore, the anomaly detector is evaluated using proxy physiological thresholds and controlled synthetic perturbation tests. These results demonstrate engineering behavior and do not constitute clinical validation."
+}

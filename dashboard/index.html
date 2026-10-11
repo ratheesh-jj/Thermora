@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THERMORA - Live Worker Safety Monitor</title>
+    <meta name="description" content="AI-Powered real-time worker safety monitoring dashboard with thermal, fatigue, fall detection, and vital anomaly analysis.">
+    <link rel="stylesheet" href="style.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <!-- ===== SOS ALERT MODAL ===== -->
+    <div class="alert-overlay" id="alert-overlay" style="display:none;">
+        <div class="alert-modal" id="alert-modal">
+            <div class="alert-modal__icon" id="alert-modal-icon">⚠️</div>
+            <div class="alert-modal__level" id="alert-modal-level">ALERT</div>
+            <div class="alert-modal__title" id="alert-modal-title">--</div>
+            <div class="alert-modal__desc" id="alert-modal-desc">--</div>
+            <button class="alert-modal__btn" id="alert-dismiss" onclick="dismissAlert()">DISMISS</button>
+        </div>
+    </div>
+
+    <!-- ===== TOP BAR ===== -->
+    <header class="topbar" id="topbar">
+        <div class="topbar__brand">
+            <div class="topbar__logo">
+                <span class="topbar__logo-mark">T</span>
+                <div>
+                    <h1 class="topbar__title">THERMORA</h1>
+                    <span class="topbar__subtitle">AI-Powered Worker Safety Monitor</span>
+                </div>
+            </div>
+        </div>
+        <div class="topbar__status">
+            <a href="supervisor.html" class="sup-nav-btn">👥 Supervisor View</a>
+            <div class="status-chip" id="wrist-chip">
+                <span class="status-chip__dot" id="wrist-dot"></span>
+                <span class="status-chip__label">WRISTBAND</span>
+                <span class="status-chip__value" id="wrist-text">DISCONNECTED</span>
+            </div>
+            <div class="status-chip" id="env-chip">
+                <span class="status-chip__dot" id="env-dot"></span>
+                <span class="status-chip__label">ENVIRONMENT</span>
+                <span class="status-chip__value" id="env-text">DISCONNECTED</span>
+            </div>
+            <div class="status-chip status-chip--time">
+                <span class="status-chip__label">LAST PACKET</span>
+                <span class="status-chip__value mono" id="last-packet-time">--:--:--</span>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" onclick="toggleTheme()">
+                <span class="theme-toggle__icon" id="theme-icon">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== DASHBOARD GRID ===== -->
+    <main class="dashboard" id="dashboard">
+
+        <!-- ROW 1: Profile | Vitals | Thermal -->
+        <section class="card card--profile" id="card-profile">
+            <div class="card__header">
+                <span class="card__icon">👷</span>
+                <h2 class="card__title">Worker Profile</h2>
+            </div>
+            <form id="profile-form" class="profile-form">
+                <div class="profile-form__field">
+                    <label for="w-id">Worker ID</label>
+                    <input type="text" id="w-id" value="W-01">
+                </div>
+                <div class="profile-form__field">
+                    <label for="w-age">Age</label>
+                    <input type="number" id="w-age" value="30">
+                </div>
+                <div class="profile-form__field">
+                    <label for="w-sex">Sex (1=M, 0=F)</label>
+                    <input type="number" id="w-sex" value="1" min="0" max="1">
+                </div>
+                <div class="profile-form__field">
+                    <label for="w-height">Height (cm)</label>
+                    <input type="number" id="w-height" value="175">
+                </div>
+                <div class="profile-form__field">
+                    <label for="w-weight">Weight (kg)</label>
+                    <input type="number" id="w-weight" value="75">
+                </div>
+                <div class="profile-form__field">
+                    <label for="w-job">Activity Code</label>
+                    <input type="number" id="w-job" value="2">
+                </div>
+                <div class="profile-form__field profile-form__field--full">
+                    <label for="w-wr">Work/Rest (1=W, 0=R)</label>
+                    <input type="number" id="w-wr" value="1" min="0" max="1">
+                </div>
+                <button type="button" onclick="saveProfile()" class="btn btn--primary profile-form__btn" id="save-profile-btn">
+                    <span class="btn__icon">💾</span>
+                    Save Profile
+                </button>
+            </form>
+        </section>
+
+        <section class="card card--vitals" id="card-vitals">
+            <div class="card__header">
+                <span class="card__icon">❤️</span>
+                <h2 class="card__title">Live Vitals</h2>
+            </div>
+            <div class="vitals-hero">
+                <div class="vitals-hero__item">
+                    <span class="vitals-hero__icon">❤️</span>
+                    <span class="vitals-hero__value mono" id="val-hr">--</span>
+                    <span class="vitals-hero__unit">BPM</span>
+                </div>
+                <div class="vitals-hero__divider"></div>
+                <div class="vitals-hero__item">
+                    <span class="vitals-hero__icon">🫁</span>
+                    <span class="vitals-hero__value mono" id="val-spo2">--</span>
+                    <span class="vitals-hero__unit">% SpO2</span>
+                </div>
+            </div>
+            <div class="vitals-secondary">
+                <div class="mini-stat">
+                    <span class="mini-stat__label">HRV</span>
+                    <span class="mini-stat__value mono" id="val-hrv">--</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat__label">PPG Quality</span>
+                    <span class="mini-stat__value mono" id="val-ppg-qual">WAITING_FOR_DATA</span>
+                </div>
+            </div>
+            <div class="card__divider"></div>
+            <div class="forecast">
+                <h3 class="forecast__title">SpO2 Forecast (Persistence)</h3>
+                <div class="forecast__grid">
+                    <div class="mini-stat">
+                        <span class="mini-stat__label">+30s Predict</span>
+                        <span class="mini-stat__value mono" id="val-spo2-30">--</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-stat__label">+60s Predict</span>
+                        <span class="mini-stat__value mono" id="val-spo2-60">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card card--thermal" id="card-thermal">
+            <div class="card__header">
+                <span class="card__icon">🌡️</span>
+                <h2 class="card__title">Thermal Engine</h2>
+            </div>
+            <div class="env-bar">
+                <div class="env-bar__item">
+                    <span class="env-bar__label">Ambient</span>
+                    <span class="env-bar__value mono"><span id="val-env-t">--</span> °C</span>
+                </div>
+                <div class="env-bar__item">
+                    <span class="env-bar__label">Humidity</span>
+                    <span class="env-bar__value mono"><span id="val-env-h">--</span> %</span>
+                </div>
+            </div>
+            <div class="thermal-metrics">
+                <div class="thermal-metric">
+                    <span class="thermal-metric__label">Est. Core Temp</span>
+                    <span class="thermal-metric__value mono" id="val-core-est">--</span>
+                    <span class="thermal-metric__unit">°C</span>
+                </div>
+                <div class="thermal-metric">
+                    <span class="thermal-metric__label">Predicted +10m</span>
+                    <span class="thermal-metric__value mono" id="val-core-pred">--</span>
+                    <span class="thermal-metric__unit">°C</span>
+                </div>
+                <div class="thermal-metric">
+                    <span class="thermal-metric__label">Predicted Rise</span>
+                    <span class="thermal-metric__value mono" id="val-core-rise">--</span>
+                    <span class="thermal-metric__unit">°C</span>
+                </div>
+            </div>
+            <div class="status-badge" id="thermal-status">WAITING_FOR_DATA</div>
+        </section>
+
+        <!-- ROW 2: Fatigue | Fall | Anomaly -->
+        <section class="card card--fatigue" id="card-fatigue">
+            <div class="card__header">
+                <span class="card__icon">😴</span>
+                <h2 class="card__title">Fatigue Model</h2>
+            </div>
+            <div class="gauge-big">
+                <span class="gauge-big__value mono" id="val-fatigue">--</span>
+                <span class="gauge-big__unit">/ 10</span>
+            </div>
+            <div class="trend-line" id="val-fatigue-trend">Trend: UNKNOWN</div>
+            <div class="status-badge" id="fatigue-status">WAITING_FOR_DATA</div>
+        </section>
+
+        <section class="card card--fall" id="card-fall">
+            <div class="card__header">
+                <span class="card__icon">🚨</span>
+                <h2 class="card__title">Fall Detection</h2>
+            </div>
+            <div class="gauge-big">
+                <span class="gauge-big__value mono" id="val-fall-prob">0.0</span>
+                <span class="gauge-big__unit">% Prob</span>
+            </div>
+            <div class="alert-box" id="val-fall-detected">NO FALL DETECTED</div>
+            <div class="status-badge" id="fall-status">WAITING_FOR_DATA</div>
+        </section>
+
+        <section class="card card--anomaly" id="card-anomaly">
+            <div class="card__header">
+                <span class="card__icon">🔬</span>
+                <h2 class="card__title">Vital Anomaly Detector</h2>
+            </div>
+            <div class="anomaly-grid">
+                <div class="anomaly-stat">
+                    <span class="anomaly-stat__label">Vital Status</span>
+                    <span class="anomaly-stat__value anomaly-stat__value--highlight mono" id="val-anomaly-status">WAITING_FOR_DATA</span>
+                </div>
+                <div class="anomaly-stat">
+                    <span class="anomaly-stat__label">HR Deviation</span>
+                    <span class="anomaly-stat__value mono" id="val-anomaly-hr">0</span>
+                </div>
+                <div class="anomaly-stat">
+                    <span class="anomaly-stat__label">SpO2 Deviation</span>
+                    <span class="anomaly-stat__value mono" id="val-anomaly-spo2">0</span>
+                </div>
+                <div class="anomaly-stat">
+                    <span class="anomaly-stat__label">ML Anomaly Support</span>
+                    <span class="anomaly-stat__value mono" id="val-anomaly-ml">NO</span>
+                </div>
+            </div>
+            <div class="severity-bar" id="severity-bar">
+                <span class="severity-bar__icon" id="severity-icon">⚪</span>
+                <span class="severity-bar__level mono" id="severity-level">--</span>
+                <span class="severity-bar__desc" id="severity-desc">Waiting for data</span>
+            </div>
+            <div class="episode-box" id="val-episode" style="display:none;">
+                Active Episode: None
+            </div>
+        </section>
+
+        <!-- ROW 3: GPS Location -->
+        <section class="card card--location" id="card-location">
+            <div class="card__header">
+                <span class="card__icon">📍</span>
+                <h2 class="card__title">GPS Location</h2>
+            </div>
+            <div class="location-map" id="location-map"></div>
+            <div class="location-stats">
+                <div class="mini-stat">
+                    <span class="mini-stat__label">Latitude</span>
+                    <span class="mini-stat__value mono" id="val-gps-lat">--</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat__label">Longitude</span>
+                    <span class="mini-stat__value mono" id="val-gps-lng">--</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat__label">Accuracy</span>
+                    <span class="mini-stat__value mono" id="val-gps-acc">--</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat__label">Last Fix</span>
+                    <span class="mini-stat__value mono" id="val-gps-fix">--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 3: Movement & Data -->
+        <section class="card card--movement" id="card-movement">
+            <div class="card__header">
+                <span class="card__icon">📡</span>
+                <h2 class="card__title">Live Movement & Data</h2>
+            </div>
+            <div class="movement-grid">
+                <div class="movement-item">
+                    <span class="movement-item__label">Mag</span>
+                    <span class="movement-item__value mono"><span id="val-mag">0</span> g</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Ax</span>
+                    <span class="movement-item__value mono" id="val-ax">0.00</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Ay</span>
+                    <span class="movement-item__value mono" id="val-ay">0.00</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Az</span>
+                    <span class="movement-item__value mono" id="val-az">0.00</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Gx</span>
+                    <span class="movement-item__value mono" id="val-gx">0.00</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Gy</span>
+                    <span class="movement-item__value mono" id="val-gy">0.00</span>
+                </div>
+                <div class="movement-item">
+                    <span class="movement-item__label">Gz</span>
+                    <span class="movement-item__value mono" id="val-gz">0.00</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== AI MODEL TEST LAB ===== -->
+    <section class="lab" id="lab-section">
+
+        <!-- Section Header -->
+        <div class="lab__header">
+            <div class="lab__header-text">
+                <h2 class="lab__title">AI Model Test Lab</h2>
+                <p class="lab__subtitle">Test THERMORA's prediction models with custom physiological and environmental inputs.</p>
+            </div>
+            <div class="lab__badges">
+                <span class="lab__badge lab__badge--demo">DEMO MODE</span>
+                <span class="lab__badge lab__badge--source" id="lab-data-source">Data Source: CUSTOM INPUT</span>
+            </div>
+        </div>
+
+        <!-- Pipeline Flow Visual -->
+        <div class="lab__flow">
+            <div class="lab__flow-step lab__flow-step--active" id="flow-inputs">
+                <span class="lab__flow-icon">📥</span>
+                <span class="lab__flow-label">INPUTS</span>
+            </div>
+            <div class="lab__flow-arrow">→</div>
+            <div class="lab__flow-step" id="flow-model">
+                <span class="lab__flow-icon">🧠</span>
+                <span class="lab__flow-label">ML MODEL</span>
+            </div>
+            <div class="lab__flow-arrow">→</div>
+            <div class="lab__flow-step" id="flow-prediction">
+                <span class="lab__flow-icon">📊</span>
+                <span class="lab__flow-label">PREDICTION</span>
+            </div>
+            <div class="lab__flow-arrow">→</div>
+            <div class="lab__flow-step" id="flow-risk">
+                <span class="lab__flow-icon">🎯</span>
+                <span class="lab__flow-label">RISK LEVEL</span>
+            </div>
+        </div>
+
+        <!-- Model Selector -->
+        <div class="lab__card" id="lab-model-selector">
+            <div class="lab__card-header">
+                <span class="lab__card-icon">🧠</span>
+                <h3 class="lab__card-title">Select ML Model</h3>
+            </div>
+            <div class="lab__models" id="lab-models-grid">
+                <p class="lab__loading">Loading available models...</p>
+            </div>
+        </div>
+
+        <!-- Custom Inputs -->
+        <div class="lab__card" id="lab-inputs-card" style="display:none;">
+            <div class="lab__card-header">
+                <span class="lab__card-icon">🎛️</span>
+                <h3 class="lab__card-title">Custom Sensor Inputs</h3>
+                <button class="lab__reset-btn" id="lab-reset-btn" title="Reset to defaults">↺ Reset Inputs</button>
+            </div>
+            <p class="lab__card-desc">Manually modify sensor values to demonstrate how THERMORA responds to different worker conditions.</p>
+            <div class="lab__inputs-grid" id="lab-inputs-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="lab__card" id="lab-scenarios-card" style="display:none;">
+            <div class="lab__card-header">
+                <span class="lab__card-icon">⚡</span>
+                <h3 class="lab__card-title">Quick Scenarios</h3>
+            </div>
+            <div class="lab__scenarios" id="lab-scenarios-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Run Button -->
+        <div class="lab__run-area" id="lab-run-area" style="display:none;">
+            <button class="lab__run-btn" id="lab-run-btn">
+                <span class="lab__run-icon">🚀</span>
+                <span>Run AI Prediction</span>
+            </button>
+        </div>
+
+        <!-- Result Card -->
+        <div class="lab__card lab__result-card" id="lab-result-card" style="display:none;">
+            <div class="lab__card-header">
+                <span class="lab__card-icon">📊</span>
+                <h3 class="lab__card-title">AI Prediction</h3>
+                <span class="lab__badge lab__badge--source">CUSTOM DEMO INPUT</span>
+            </div>
+            <div class="lab__result-body" id="lab-result-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Explainability -->
+        <div class="lab__card" id="lab-explain-card" style="display:none;">
+            <div class="lab__card-header">
+                <span class="lab__card-icon">🔍</span>
+                <h3 class="lab__card-title">Why did the model predict this?</h3>
+            </div>
+            <div class="lab__explain-body" id="lab-explain-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="lab__disclaimer" id="lab-disclaimer">
+            <p>⚕️ THERMORA is a prototype AI system for occupational safety monitoring. Model outputs are <strong>AI predictions</strong>, not medical diagnoses. Always consult qualified professionals for health decisions.</p>
+        </div>
+
+    </section>
+
+    <!-- ===== SIMULATION TOGGLE BAR ===== -->
+    <div class="sim-bar" id="sim-bar">
+        <div class="sim-bar__inner">
+            <div class="sim-bar__controls">
+                <span class="sim-bar__status" id="sim-status-text" style="display:none;">OFF</span>
+                <span class="sim-bar__pulse" id="sim-pulse" style="display:none;"></span>
+                <span class="sim-bar__desc" id="sim-desc" style="display:none;"></span>
+                <label class="sim-toggle" for="sim-switch" id="sim-toggle-label">
+                    <input type="checkbox" id="sim-switch" class="sim-toggle__input">
+                    <span class="sim-toggle__slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=7"></script>
+</body>
+</html>

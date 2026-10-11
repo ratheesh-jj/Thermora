@@ -1,0 +1,13 @@
+{
+  "module": "THERMORA hybrid vital anomaly detector",
+  "test": "baseline_isolated_synthetic_stress_test",
+  "normal_windows": 755,
+  "total_test_windows": 5285,
+  "normal_single_window_fpr": 0.0,
+  "persistence_windows": 2,
+  "persistence_precision": 1.0,
+  "persistence_recall": 0.34,
+  "persistence_f1": 0.5074626865671642,
+  "persistence_false_positive_rate": 0.0,
+  "warning": "Synthetic anomalies are engineering stress tests, not clinical validation."
+}

@@ -1,0 +1,126 @@
+{
+  "dataset": "BIDMC PPG and Respiration Dataset v1.0.0",
+  "recordings_total": 53,
+  "train_recordings": [
+    "bidmc_01",
+    "bidmc_02",
+    "bidmc_03",
+    "bidmc_05",
+    "bidmc_07",
+    "bidmc_08",
+    "bidmc_09",
+    "bidmc_10",
+    "bidmc_11",
+    "bidmc_12",
+    "bidmc_15",
+    "bidmc_16",
+    "bidmc_17",
+    "bidmc_19",
+    "bidmc_21",
+    "bidmc_22",
+    "bidmc_23",
+    "bidmc_24",
+    "bidmc_25",
+    "bidmc_26",
+    "bidmc_27",
+    "bidmc_28",
+    "bidmc_29",
+    "bidmc_30",
+    "bidmc_31",
+    "bidmc_32",
+    "bidmc_34",
+    "bidmc_35",
+    "bidmc_36",
+    "bidmc_37",
+    "bidmc_38",
+    "bidmc_39",
+    "bidmc_40",
+    "bidmc_41",
+    "bidmc_43",
+    "bidmc_45",
+    "bidmc_46",
+    "bidmc_47",
+    "bidmc_49",
+    "bidmc_50",
+    "bidmc_52",
+    "bidmc_53"
+  ],
+  "test_recordings": [
+    "bidmc_04",
+    "bidmc_06",
+    "bidmc_13",
+    "bidmc_14",
+    "bidmc_18",
+    "bidmc_20",
+    "bidmc_33",
+    "bidmc_42",
+    "bidmc_44",
+    "bidmc_48",
+    "bidmc_51"
+  ],
+  "prediction_windows": 4168,
+  "train_windows": 3299,
+  "test_windows": 869,
+  "input_seconds": 30,
+  "step_seconds": 5,
+  "feature_count": 81,
+  "comparison": [
+    {
+      "horizon_seconds": 30,
+      "model": "Persistence",
+      "MAE": 0.34637514384349827,
+      "RMSE": 0.6638798676802621,
+      "R2": 0.9201747666236714
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "RandomForest",
+      "MAE": 0.435028105260049,
+      "RMSE": 0.603927559664815,
+      "R2": 0.9339411670599148
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "HistGradientBoosting",
+      "MAE": 0.4056108528133343,
+      "RMSE": 0.6157316960784377,
+      "R2": 0.9313336093132107
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "XGBoost",
+      "MAE": 0.41587572350189245,
+      "RMSE": 0.6176486501308219,
+      "R2": 0.9309053863755476
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "Persistence",
+      "MAE": 0.35443037974683544,
+      "RMSE": 0.6935507611039354,
+      "R2": 0.9135892748904052
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "RandomForest",
+      "MAE": 0.48916270933434414,
+      "RMSE": 0.6575227481934308,
+      "R2": 0.9223336832884264
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "HistGradientBoosting",
+      "MAE": 0.5560888582878591,
+      "RMSE": 0.7524640797885088,
+      "R2": 0.8982855418080956
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "XGBoost",
+      "MAE": 0.5417192325218911,
+      "RMSE": 0.7227595574978362,
+      "R2": 0.9061576595112949
+    }
+  ],
+  "note": "This evaluates future SpO2 regression. BIDMC does not provide ground-truth clinical SpO2 risk labels."
+}

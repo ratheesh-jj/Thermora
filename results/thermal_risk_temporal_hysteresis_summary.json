@@ -1,0 +1,46 @@
+{
+  "engine": "THERMORA temporal-aware multi-factor thermal risk engine",
+  "persistence_enabled": true,
+  "hysteresis_enabled": true,
+  "sequence_awareness_enabled": true,
+  "escalation_consecutive_readings": 2,
+  "deescalation_consecutive_readings": 2,
+  "maximum_continuous_gap_minutes": 5.0,
+  "emergency_core_temperature_c": 39.0,
+  "emergency_predicted_rise_c": 0.6,
+  "rows": 1342,
+  "risk_distribution": {
+    "SAFE": 982,
+    "CAUTION": 239,
+    "HIGH": 78,
+    "CRITICAL": 43
+  },
+  "rows_changed_by_hysteresis": 160,
+  "percentage_changed": 11.922503725782414,
+  "transition_reasons": {
+    "STATE_MAINTAINED": 1047,
+    "ESCALATION_PENDING": 109,
+    "ESCALATED_AFTER_PERSISTENCE": 69,
+    "DEESCALATION_PENDING": 51,
+    "DEESCALATED_AFTER_PERSISTENCE": 39,
+    "EMERGENCY_OVERRIDE": 27
+  },
+  "thermal_statistics": {
+    "mean_estimated_core_c": 37.89637108271237,
+    "mean_predicted_core_c": 38.02532274053693,
+    "mean_predicted_rise_c": 0.128951657824554,
+    "max_predicted_core_c": 39.33703440838261,
+    "max_predicted_rise_c": 0.46526771087430063
+  },
+  "mean_scores": {
+    "physiological": 2.2570789865871834,
+    "environmental": 2.7600596125186287,
+    "activity_work": 1.650521609538003
+  },
+  "mean_environment": {
+    "ambient_temp_c": 34.92456442357851,
+    "humidity_pct": 40.54473395931142,
+    "wind_mps": 0.35734370498415435,
+    "solar_radiation_w_m2": 74.17183483566217
+  }
+}

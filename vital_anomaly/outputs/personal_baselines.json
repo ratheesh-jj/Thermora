@@ -1,0 +1,1168 @@
+{
+  "bidmc_01_Numerics": {
+    "HR": {
+      "median": 91.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 91.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 21.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_02_Numerics": {
+    "HR": {
+      "median": 91.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 90.5,
+      "robust_std": 2.2239,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 15.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_03_Numerics": {
+    "HR": {
+      "median": 76.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 76.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 96.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_04_Numerics": {
+    "HR": {
+      "median": 93.5,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 94.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_05_Numerics": {
+    "HR": {
+      "median": 98.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 98.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 11.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 99.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_06_Numerics": {
+    "HR": {
+      "median": 82.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 81.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 20.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 99.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_07_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 90.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 20.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 95.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_08_Numerics": {
+    "HR": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 21.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_09_Numerics": {
+    "HR": {
+      "median": 77.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 76.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 20.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_10_Numerics": {
+    "HR": {
+      "median": 82.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 81.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_11_Numerics": {
+    "HR": {
+      "median": 92.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 92.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 15.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_12_Numerics": {
+    "HR": {
+      "median": 92.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 92.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 96.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_13_Numerics": {
+    "HR": {
+      "median": 67.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 66.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 11.0,
+      "robust_std": 4.4478,
+      "samples": 15
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_14_Numerics": {
+    "HR": {
+      "median": 95.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 95.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 99.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    }
+  },
+  "bidmc_15_Numerics": {
+    "HR": {
+      "median": 107.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 107.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 15.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_16_Numerics": {
+    "HR": {
+      "median": 109.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 110.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 99.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_17_Numerics": {
+    "HR": {
+      "median": 80.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 77.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_18_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 90.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_19_Numerics": {
+    "HR": {
+      "median": 73.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 73.0,
+      "robust_std": 0.7413,
+      "samples": 46
+    },
+    "RESP": {
+      "median": 13.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 46
+    }
+  },
+  "bidmc_20_Numerics": {
+    "HR": {
+      "median": 88.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 87.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 15.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_21_Numerics": {
+    "HR": {
+      "median": 124.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 124.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_22_Numerics": {
+    "HR": {
+      "median": 81.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 81.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 92.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_23_Numerics": {
+    "HR": {
+      "median": 63.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 63.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_24_Numerics": {
+    "HR": {
+      "median": 96.0,
+      "robust_std": 3.7064999999999997,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 94.5,
+      "robust_std": 5.1891,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 23.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_25_Numerics": {
+    "HR": {
+      "median": 124.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 125.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 16.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_26_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 88.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 95.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_27_Numerics": {
+    "HR": {
+      "median": 88.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 88.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 11.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 96.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_28_Numerics": {
+    "HR": {
+      "median": 82.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 79.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_29_Numerics": {
+    "HR": {
+      "median": 90.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 90.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_30_Numerics": {
+    "HR": {
+      "median": 88.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 88.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 96.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_31_Numerics": {
+    "HR": {
+      "median": 83.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 82.5,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_32_Numerics": {
+    "HR": {
+      "median": 81.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 80.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 25.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 85.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_33_Numerics": {
+    "HR": {
+      "median": 82.5,
+      "robust_std": 2.2239,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 84.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 20.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 94.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_34_Numerics": {
+    "HR": {
+      "median": 81.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 81.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_35_Numerics": {
+    "HR": {
+      "median": 101.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 101.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_36_Numerics": {
+    "HR": {
+      "median": 73.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 73.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_37_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 89.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 99.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    }
+  },
+  "bidmc_38_Numerics": {
+    "HR": {
+      "median": 84.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 83.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 16.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 95.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_39_Numerics": {
+    "HR": {
+      "median": 75.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 74.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 14.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_40_Numerics": {
+    "HR": {
+      "median": 110.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 110.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 16.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    }
+  },
+  "bidmc_41_Numerics": {
+    "HR": {
+      "median": 80.5,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 79.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 14.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_42_Numerics": {
+    "HR": {
+      "median": 84.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 84.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 95.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_43_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 89.0,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_44_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 2.2239,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 89.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 97.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_45_Numerics": {
+    "HR": {
+      "median": 60.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 61.5,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 16.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_46_Numerics": {
+    "HR": {
+      "median": 106.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 107.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.5,
+      "robust_std": 2.2239,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 95.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    }
+  },
+  "bidmc_47_Numerics": {
+    "HR": {
+      "median": 83.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 83.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 22.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_48_Numerics": {
+    "HR": {
+      "median": 100.5,
+      "robust_std": 2.9652,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 100.5,
+      "robust_std": 2.2239,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_49_Numerics": {
+    "HR": {
+      "median": 84.5,
+      "robust_std": 0.7413,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 84.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 17.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 86.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    }
+  },
+  "bidmc_50_Numerics": {
+    "HR": {
+      "median": 76.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 76.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 15.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_51_Numerics": {
+    "HR": {
+      "median": 90.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 90.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 98.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  },
+  "bidmc_52_Numerics": {
+    "HR": {
+      "median": 115.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 116.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 18.0,
+      "robust_std": 0.5,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 93.0,
+      "robust_std": 0.7413,
+      "samples": 49
+    }
+  },
+  "bidmc_53_Numerics": {
+    "HR": {
+      "median": 92.0,
+      "robust_std": 3.7064999999999997,
+      "samples": 49
+    },
+    "PULSE": {
+      "median": 92.0,
+      "robust_std": 4.4478,
+      "samples": 49
+    },
+    "RESP": {
+      "median": 19.0,
+      "robust_std": 1.4826,
+      "samples": 49
+    },
+    "SpO2": {
+      "median": 100.0,
+      "robust_std": 0.5,
+      "samples": 49
+    }
+  }
+}

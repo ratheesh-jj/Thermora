@@ -1,0 +1,16 @@
+{
+    "dataset_root": "C:\\Users\\OMEN\\Desktop\\Projects\\SIH26\\wisdm_activity",
+    "sample_rate_hz": 20,
+    "window_seconds": 10,
+    "window_samples": 200,
+    "step_samples": 100,
+    "participants_total": 51,
+    "participants_train": 40,
+    "participants_test": 11,
+    "windows_total": 36346,
+    "windows_train": 28551,
+    "windows_test": 7795,
+    "best_model": "XGBoost",
+    "accuracy": 0.6990378447722899,
+    "macro_f1": 0.7090895952780889
+}

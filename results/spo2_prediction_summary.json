@@ -1,0 +1,188 @@
+{
+  "dataset": "BIDMC",
+  "train_recordings": [
+    "bidmc_01",
+    "bidmc_02",
+    "bidmc_03",
+    "bidmc_05",
+    "bidmc_07",
+    "bidmc_08",
+    "bidmc_09",
+    "bidmc_10",
+    "bidmc_11",
+    "bidmc_12",
+    "bidmc_15",
+    "bidmc_16",
+    "bidmc_17",
+    "bidmc_19",
+    "bidmc_21",
+    "bidmc_22",
+    "bidmc_23",
+    "bidmc_24",
+    "bidmc_25",
+    "bidmc_26",
+    "bidmc_27",
+    "bidmc_28",
+    "bidmc_29",
+    "bidmc_30",
+    "bidmc_31",
+    "bidmc_32",
+    "bidmc_34",
+    "bidmc_35",
+    "bidmc_36",
+    "bidmc_37",
+    "bidmc_38",
+    "bidmc_39",
+    "bidmc_40",
+    "bidmc_41",
+    "bidmc_43",
+    "bidmc_45",
+    "bidmc_46",
+    "bidmc_47",
+    "bidmc_49",
+    "bidmc_50",
+    "bidmc_52",
+    "bidmc_53"
+  ],
+  "test_recordings": [
+    "bidmc_04",
+    "bidmc_06",
+    "bidmc_13",
+    "bidmc_14",
+    "bidmc_18",
+    "bidmc_20",
+    "bidmc_33",
+    "bidmc_42",
+    "bidmc_44",
+    "bidmc_48",
+    "bidmc_51"
+  ],
+  "prediction_windows": 4168,
+  "comparison": [
+    {
+      "horizon_seconds": 30,
+      "model": "Persistence",
+      "MAE": 0.34637514384349827,
+      "RMSE": 0.6638798676802621,
+      "R2": 0.9201747666236714
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "LinearTrend",
+      "MAE": 0.7294782209103614,
+      "RMSE": 1.1992547636830762,
+      "R2": 0.7395141696921849
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "ClippedLinearTrend",
+      "MAE": 0.6698505307649438,
+      "RMSE": 1.1161526466052938,
+      "R2": 0.7743640030787698
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "EWMATrend",
+      "MAE": 0.8941311852704258,
+      "RMSE": 1.735369551381466,
+      "R2": 0.45456230875756654
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "Ridge",
+      "MAE": 0.3716082431094579,
+      "RMSE": 0.5526922230277974,
+      "R2": 0.944674173985424
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "RandomForest",
+      "MAE": 0.4900623224274191,
+      "RMSE": 0.6528701635817055,
+      "R2": 0.9228004368744893
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "HistGradientBoosting",
+      "MAE": 0.4048107594315671,
+      "RMSE": 0.6083452032801006,
+      "R2": 0.9329712106349615
+    },
+    {
+      "horizon_seconds": 30,
+      "model": "XGBoost",
+      "MAE": 0.36908894880182863,
+      "RMSE": 0.5786723220512789,
+      "R2": 0.939350584408727
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "Persistence",
+      "MAE": 0.35443037974683544,
+      "RMSE": 0.6935507611039354,
+      "R2": 0.9135892748904052
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "LinearTrend",
+      "MAE": 1.1892948436506499,
+      "RMSE": 1.95789862635689,
+      "R2": 0.31136110640395387
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "ClippedLinearTrend",
+      "MAE": 1.0076085050389143,
+      "RMSE": 1.7218725718949204,
+      "R2": 0.467385285607234
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "EWMATrend",
+      "MAE": 1.4062140391254316,
+      "RMSE": 3.0208329199899193,
+      "R2": -0.6393230864092978
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "Ridge",
+      "MAE": 0.42496941596210364,
+      "RMSE": 0.6029767757135126,
+      "R2": 0.9346850927481982
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "RandomForest",
+      "MAE": 0.5276643433061157,
+      "RMSE": 0.697600738339862,
+      "R2": 0.9125771405631669
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "HistGradientBoosting",
+      "MAE": 0.560445835962641,
+      "RMSE": 0.7583925062994092,
+      "R2": 0.8966764759237524
+    },
+    {
+      "horizon_seconds": 60,
+      "model": "XGBoost",
+      "MAE": 0.4671325420208438,
+      "RMSE": 0.6504455119267164,
+      "R2": 0.9239966059197026
+    }
+  ],
+  "selected_methods": {
+    "30": {
+      "method": "Persistence",
+      "is_ml": false,
+      "mae": 0.34637514384349827
+    },
+    "60": {
+      "method": "Persistence",
+      "is_ml": false,
+      "mae": 0.35443037974683544
+    }
+  },
+  "note": "THERMORA uses a persistence/trend-based short-horizon SpO2 forecast if ML models did not demonstrate lower held-out MAE than the persistence baseline."
+}

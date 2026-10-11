@@ -1,0 +1,30 @@
+{
+  "module": "THERMORA hybrid vital anomaly detector",
+  "test": "episode_level_modality_aware_stress_test",
+  "total_episodes": 120,
+  "abnormal_episodes": 120,
+  "detected_episodes": 80,
+  "missed_episodes": 40,
+  "false_alarm_episodes": 0,
+  "episode_precision": 1.0,
+  "episode_recall": 0.6666666666666666,
+  "episode_f1": 0.8,
+  "episode_false_positive_rate": 0.0,
+  "mean_detection_delay_seconds": 22.5,
+  "median_detection_delay_seconds": 30.0,
+  "thresholds": {
+    "spo2_low": 90.0,
+    "hr_high": 120.0,
+    "hr_low": 50.0,
+    "hr_relative_change": 0.25,
+    "spo2_baseline_drop": 3.0,
+    "persistence_windows": 2
+  },
+  "logic": {
+    "combined_hr_spo2": "immediate anomaly",
+    "hr_only": "2 consecutive windows",
+    "spo2_only": "2 consecutive windows",
+    "ppg_only": "not a vital anomaly"
+  },
+  "warning": "Synthetic abnormalities are engineering stress tests and do not constitute clinical validation."
+}
